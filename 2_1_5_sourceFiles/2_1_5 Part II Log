@@ -1,0 +1,31 @@
+# IPython log file
+
+my_public_key = (29737, 11)
+my_private_key = (29737, 2671)
+jimmys_public_key = (31897, 43)
+outgoing_message = "Hey Jimmy, how do you like this class?"
+outgoing_message = numerize("Hey Jimmy, how do you like this class?")
+%run "C:\Users\fhsplab\Desktop\2_1_5\2_1_5_sourceFiles\paired_keys.py"outgoing_message = numerize("Hey Jimmy, how do you like this class?")
+outgoing_message
+#[Out]# '4675-9506-4879-8383-9518-0678-8593-0674-8506-9585-9106-8279-8175-0690-7879-8906-7382-7189-8937'
+encrypted_outgoing_message = use_key(jimmys_public_key, outgoing_message)
+encrypted_outgoing_message
+#[Out]# '23546-3949-21592-2119-6178-18049-8173-27228-7131-12207-25839-10134-6721-25086-28971-17844-28018-23339-25323'
+encrypted_inbound_message = "27261-7910-9696-1391-0466-21903-2823-19949-27281-10987-23513-0916-20426-14523-24152-15084-17442-2771-12645-14559-12473-9963"
+encrypted_inbound_message
+#[Out]# '27261-7910-9696-1391-0466-21903-2823-19949-27281-10987-23513-0916-20426-14523-24152-15084-17442-2771-12645-14559-12473-9963'
+decrypted_message = use_key(my_private_key, encrypted_inbound_message)
+decrypted_message
+#[Out]# '5878-7184-8189-0676-8588-0695-8591-8806-7875-8286-0693-7990-7806-9078-7989-0673-8271-8989-0706-10048-7983-8395'
+plain_inbound_message = denumerize(decrypted_message)
+plain_inbound_message = denumerize(decrypted_message)
+my_private_key
+#[Out]# (29737, 2671)
+decrypted_message = use_key(my_private_key, encrypted_inbound_message)
+decrypted_message
+#[Out]# '5878-7184-8189-0676-8588-0695-8591-8806-7875-8286-0693-7990-7806-9078-7989-0673-8271-8989-0706-10048-7983-8395'
+plain_inbound_message = denumerize(decrypted_message)
+logfile end
+logfile close
+logfile
+%logstop
